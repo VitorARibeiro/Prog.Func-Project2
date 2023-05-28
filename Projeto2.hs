@@ -3,6 +3,7 @@ import Data.List (delete)
 import Data.List (nub)
 
 
+
 --Tarefas--
 
 --tarefa1
@@ -61,6 +62,42 @@ tarefa4 = do
         then putStrLn "Dias insuficientes para acomodar todos os exames"
         else escalonamento4 (lines conteudoDisciplina) (lines conteudoInscricao) (lines conteudoAlunos) 1 n_salas (lines conteudoDisciplina)
 
+--tarefa5
+tarefa5 :: IO()
+tarefa5 = do 
+    conteudoDisciplina <- readFile "ucs.txt"
+    conteudoInscricao <- readFile "inscricoes.txt"
+    conteudoAlunos <- readFile "listaalunos.txt"
+
+    ficheiro <- openFile "Tarefa5.txt" WriteMode
+    hClose ficheiro
+
+    ficheiro <- openFile "Suporte2.txt" WriteMode
+    hClose ficheiro
+
+    ficheiro <- openFile "Suporte3.txt" WriteMode
+    hClose ficheiro
+
+    ficheiro <- openFile "Suporte4.txt" WriteMode
+    hClose ficheiro
+
+    copyFile(lines conteudoDisciplina) --fazer uma copia para ficheiro suporte 2
+    --Pedir input
+    putStrLn "indique numero de dias em que o exame pode ocorrer"
+    dias <- getLine
+    putStrLn "indique o numero de salas disponiveis por dia"
+    salas <- getLine
+
+    --linhas no ficheiro-
+    let n_disciplinas = length (lines conteudoDisciplina) -- numero de disciplinas é o numero de linhas no ficheiro
+    --convercao-- para int
+    let n_dias = read dias :: Int
+    let n_salas = read salas :: Int
+
+    if n_disciplinas > n_dias * n_salas  -- se numero de disciplinas maior que dias livres * salas impossivel
+        then putStrLn "Dias insuficientes para acomodar todos os exames"
+        else escalonamento5 (lines conteudoDisciplina) (lines conteudoInscricao) (lines conteudoAlunos) 1 n_salas 
+
 --tarefa6
 tarefa6 :: IO()
 tarefa6 = do 
@@ -82,7 +119,7 @@ tarefa6 = do
     dias <- getLine
     putStrLn "indique o numero de salas disponiveis por dia"
     salas <- getLine
-    putStrLn "indique a capacidade das salas no formato [x,y,z,...]"
+    putStrLn "indique a capacidade das salas no formato [Sala 1,Sala 2,...]"
     lotacao <- getLine
     let lotacaoInt = read lotacao :: [Int]
 
@@ -106,7 +143,175 @@ tarefa6 = do
             if suporte2 /= []
                 then putStrLn ("Insuficiente para acomodar todos os exames")
                 else return()
+--funcoes tarefa 5
+copyFile :: [String] -> IO()
+copyFile [] = return()
+copyFile (x:xs)= do 
+    ficheiro <- openFile "Suporte2.txt" AppendMode
+    hPutStrLn ficheiro x
+    hClose ficheiro
+    copyFile xs
+
+escalonamento5 :: [String]-> [String]-> [String]->Int -> Int  -> IO() 
+escalonamento5 disciplina inscricao alunos dias salas  = do
+
     
+    ficheiro <- openFile "Suporte.txt" WriteMode
+    hClose ficheiro
+
+    
+    ficheiro <- openFile "Tarefa5.txt" AppendMode
+    hPutStrLn ficheiro ("--- dia "++ show dias ++ "---")
+    hClose ficheiro
+   -- aqui tenho de fazer a selecao func select
+    ficheiro <- openFile "Suporte3.txt" WriteMode
+    hClose ficheiro
+    
+    repeater salas salas -- repete numero de salas ate encontrar a melhor combinacao que guarda no ficheiro 3
+
+    suporte3 <- readFile' "Suporte3.txt"
+
+    ficheiro <- openFile "Suporte.txt" WriteMode
+    hClose ficheiro
+    
+    printSalas5 disciplina inscricao alunos salas (lines suporte3) --print selecao do suporte 3
+
+    ficheiroSuporte <- readFile "Suporte.txt"
+    let tamanhoInicial = length (lines ficheiroSuporte) 
+    let tamanhoFinal = length (remDup(lines ficheiroSuporte)) 
+    let incompativeis = tamanhoInicial - tamanhoFinal
+
+    ficheiro <- openFile "Tarefa5.txt" AppendMode
+    hPutStrLn ficheiro ("Numero de incompatibilidades: " ++ show incompativeis) -- print final das incompativilidad
+    hClose ficheiro
+
+    suporte2 <- readFile' "Suporte2.txt"
+    
+    if null (lines suporte2)
+        then return()
+        else escalonamento5 disciplina inscricao alunos (dias+1) salas
+
+     
+
+condTester :: Int -> Int-> [String] -> IO() 
+condTester salas _ [] = return()
+condTester 0 _ (x:xs) = return()-- tem de remover os valores utilizados do suporte2 e escolher os melhores para o suporte3  
+condTester salas salasTotal (x:xs) = do -- numero de salas, ficheiro2
+    conteudoDisciplina <- readFile "ucs.txt"
+    conteudoInscricao <- readFile "inscricoes.txt"
+    conteudoAlunos <- readFile "listaalunos.txt"
+
+    if salas == salasTotal
+        then do 
+            suporte3 <- openFile "Suporte3.txt" AppendMode
+            hPutStrLn suporte3 x 
+            hClose suporte3
+
+            suporte2 <- openFile "Suporte2.txt" WriteMode
+            hClose suporte2
+
+            copyFile xs -- remove o x do suporte 2 pois ja foi escolhido
+        else do 
+            ficheiro <- openFile "Suporte.txt" WriteMode
+            hClose ficheiro --limpar o suporte 1 
+            suporte3 <- readFile' "Suporte3.txt"
+            let size = length (lines suporte3)
+            loaderSup2 (lines suporte3) size --adicionar os valores de sup3 no 1 para testar
+            -- load x
+            let disciplinas = unwords(tail(tail(words x)))
+            encontrarNome disciplinas (lines conteudoDisciplina) (lines conteudoInscricao) (lines conteudoAlunos)
+            --testar
+            ficheiroSuporte <- readFile' "Suporte.txt"
+            let tamanhoInicial = length (lines ficheiroSuporte) 
+            let tamanhoFinal = length (remDup(lines ficheiroSuporte)) 
+            let incompativeisx = tamanhoInicial - tamanhoFinal
+
+            if null xs 
+                then do 
+                    suporte3 <- openFile "Suporte3.txt" AppendMode
+                    hPutStrLn suporte3 x 
+                    hClose suporte3
+
+                    suporte2 <- openFile "Suporte2.txt" WriteMode
+                    hClose suporte2
+                    return()
+                else do
+                    --reload
+                    ficheiro <- openFile "Suporte.txt" WriteMode
+                    hClose ficheiro --limpar o suporte 1 
+                    suporte3 <- readFile' "Suporte3.txt"
+                    let size = length (lines suporte3)
+                    loaderSup2 (lines suporte3) size --adicionar os valores de sup3 no 1 para testar
+                    --load xs
+                    let disciplinas = unwords(tail(tail(words (head xs))))
+                    encontrarNome disciplinas (lines conteudoDisciplina) (lines conteudoInscricao) (lines conteudoAlunos)
+                    --testar
+                    ficheiroSuporte <- readFile' "Suporte.txt"
+                    let tamanhoInicial = length (lines ficheiroSuporte) 
+                    let tamanhoFinal = length (remDup(lines ficheiroSuporte)) 
+                    let incompativeisxs = tamanhoInicial - tamanhoFinal
+
+                    if incompativeisxs >= incompativeisx
+                        then do 
+                            suporte3 <- openFile "Suporte3.txt" AppendMode
+                            hPutStrLn suporte3 x 
+                            hClose suporte3
+
+                            suporte2 <- openFile "Suporte2.txt" WriteMode
+                            hClose suporte2
+
+                            copyFile xs -- remove o x do suporte 2 pois ja foi escolhido
+
+                        else do 
+                            suporte3 <- openFile "Suporte3.txt" AppendMode
+                            hPutStrLn suporte3 (head xs )
+                            hClose suporte3
+
+                            suporte2 <- openFile "Suporte2.txt" WriteMode
+                            hPutStrLn suporte2 x
+                            hClose suporte2
+                            
+                            copyFile (tail xs) -- remove o x do suporte 2 pois ja foi escolhido
+
+repeater :: Int -> Int-> IO()
+repeater 0 salasTotal = return()
+repeater salas salasTotal = do 
+
+    suporte2 <- readFile' "Suporte2.txt"
+    condTester salas salasTotal (lines suporte2)
+
+    repeater (salas-1) salasTotal
+
+
+loaderSup2 :: [String] -> Int -> IO()
+loaderSup2 [] size = return()
+loaderSup2 (x:xs) 0 = return()
+loaderSup2 (x:xs) size = do --disciplina e sup3 para comparar size sup3
+
+    conteudoDisciplina <- readFile "ucs.txt"
+    conteudoInscricao <- readFile "inscricoes.txt"
+    conteudoAlunos <- readFile "listaalunos.txt"
+
+
+    let disciplinas = unwords(tail(tail(words x)))
+    encontrarNome disciplinas (lines conteudoDisciplina) (lines conteudoInscricao) (lines conteudoAlunos)
+
+    loaderSup2 xs (size-1)
+
+
+printSalas5 :: [String]-> [String]-> [String]-> Int -> [String] -> IO()
+printSalas5 disciplina inscricao alunos salas [] = return()
+printSalas5 disciplina inscricao alunos 0 (x:xs) = return()
+printSalas5 disciplina inscricao alunos salas (x:xs) = do
+
+    let disciplinas = unwords (tail (tail(words x)))
+
+    ficheiro <- openFile "Tarefa5.txt" AppendMode
+    hPutStrLn ficheiro ("Sala "++ show salas ++ ": "++ disciplinas)
+    hClose ficheiro
+
+    encontrarNome disciplinas disciplina inscricao alunos
+    printSalas5 disciplina inscricao alunos (salas-1) xs
 --funcoes tarefa6
 
 formatacao6 :: [String]->[String]->[String]->[String]->IO()
@@ -120,7 +325,7 @@ formatacao6 disciplina inscricao alunos (x:xs) = do
     ficheiro2 <- openFile "Suporte.txt" WriteMode
     hClose ficheiro2 
 
-    encontrarNome6 disciplinas disciplina inscricao alunos
+    encontrarNome disciplinas disciplina inscricao alunos
 
     suporte1 <- readFile "Suporte.txt"
     let alunosInscritos = length (lines suporte1)
@@ -130,29 +335,6 @@ formatacao6 disciplina inscricao alunos (x:xs) = do
     hClose suporte2
 
     formatacao6 disciplina inscricao alunos xs
-
-encontrarNome6:: String -> [String] -> [String] -> [String]-> IO() --descobre o numero da disciplina a partir do nome
-encontrarNome6 x [] y z = return()
-encontrarNome6 input (linha:linhas) conteudo_insc conteudo_alunos = do
-    let numero = head (words linha)
-    if input == unwords (tail(tail(words linha)))
-        then descobrirAlxxx6 numero conteudo_insc conteudo_alunos --funcao usada na tarefa 1, com o numero descobre o al
-        else return()
-    encontrarNome6 input linhas conteudo_insc conteudo_alunos  
-
-descobrirAlxxx6:: String -> [String] -> [String]-> IO() --descobre o al a partir do numero da disciplina
-descobrirAlxxx6 numero [] conteudo_alunos = return()
-descobrirAlxxx6 numero (linha:linhas) conteudo_alunos = do
-    
-    let numero_al = head (words linha) -- al do aluno
-    if last (words linha) == numero
-        then do 
-            ficheiro <- openFile "Suporte.txt" AppendMode
-            hPutStrLn ficheiro (head (words linha))--tranforma al em nome 
-            hClose ficheiro
-
-        else return ()
-    descobrirAlxxx6 numero linhas conteudo_alunos
 
 escalonamento6 :: Int -> Int -> Int -> [Int] -> [String] -> IO() 
 escalonamento6 dias diasMax salas lotacao [] = return()
@@ -236,7 +418,6 @@ escalonamento4 :: [String]-> [String]-> [String]->Int -> Int -> [String] -> IO()
 escalonamento4 disciplina inscricao alunos dias salas [] = return()
 escalonamento4 disciplina inscricao alunos dias salas (x:xs) = do
 
-    conteudoDisciplina <- readFile "ucs.txt"
     ficheiro <- openFile "Suporte.txt" WriteMode
     hClose ficheiro
 

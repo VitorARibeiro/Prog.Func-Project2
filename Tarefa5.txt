@@ -1,0 +1,42 @@
+--- dia 1---
+Sala 10: Algebra linear
+Sala 9: Analise matematica I
+Sala 8: Laboratorio de informatica e computadores
+Sala 7: Topicos de matematica discreta
+Sala 6: Programacao procedimental
+Sala 5: Seminario de informatica
+Sala 4: Analise matematica II
+Sala 3: Elementos de fisica geral
+Sala 2: Engenharia nas organizacoes
+Sala 1: Laboratorio de programacao
+Numero de incompatibilidades: 200
+--- dia 2---
+Sala 10: Programacao funcional
+Sala 9: Compiladores
+Sala 8: Engenharia de software
+Sala 7: Métodos estatísticos
+Sala 6: Programacao orientada a objetos
+Sala 5: Sistemas operativos
+Sala 4: Algoritmia e estruturas de dados
+Sala 3: Bases de dados
+Sala 2: Comunicacao de dados
+Sala 1: Laboratorio de planeamento e desenvolvimento de software
+Numero de incompatibilidades: 180
+--- dia 3---
+Sala 10: Sistemas computacionais
+Sala 9: Metodos computacionais em engenharia
+Sala 8: Engenharia web
+Sala 7: Gestao de projetos em engenharia
+Sala 6: Inteligencia artificial
+Sala 5: Laboratorio de aplicacoes web e bases de dados
+Sala 4: Redes de computadores
+Sala 3: Sistemas de informacao
+Sala 2: Introducao a ciencia dos dados
+Sala 1: Computacao grafica
+Numero de incompatibilidades: 80
+--- dia 4---
+Sala 10: Programacao multiplataforma
+Sala 9: Interacao pessoa computador
+Sala 8: Laboratorio de projeto em engenharia informatica
+Sala 7: Sistemas distribuidos
+Numero de incompatibilidades: 20

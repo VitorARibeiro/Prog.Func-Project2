@@ -1,0 +1,85 @@
+--- dia 1---
+Sala 4 20/20: Algebra linear
+Sala 3 20/30: Algebra linear
+Sala 2 15/15: Analise matematica I
+Sala 1 20/20: Analise matematica I
+--- dia 2---
+Sala 4 20/20: Analise matematica I
+Sala 3 3/30: Analise matematica I
+Sala 2 15/15: Laboratorio de informatica e computadores
+Sala 1 20/20: Laboratorio de informatica e computadores
+--- dia 3---
+Sala 4 5/20: Laboratorio de informatica e computadores
+Sala 3 30/30: Topicos de matematica discreta
+Sala 2 10/15: Topicos de matematica discreta
+Sala 1 20/20: Programacao procedimental
+--- dia 4---
+Sala 4 20/20: Programacao procedimental
+Sala 3 30/30: Seminario de informatica
+Sala 2 10/15: Seminario de informatica
+Sala 1 20/20: Analise matematica II
+--- dia 5---
+Sala 4 20/20: Analise matematica II
+Sala 3 30/30: Elementos de fisica geral
+Sala 2 10/15: Elementos de fisica geral
+Sala 1 20/20: Engenharia nas organizacoes
+--- dia 6---
+Sala 4 20/20: Engenharia nas organizacoes
+Sala 3 30/30: Laboratorio de programacao
+Sala 2 10/15: Laboratorio de programacao
+Sala 1 20/20: Programacao funcional
+--- dia 7---
+Sala 4 20/20: Programacao funcional
+Sala 3 20/30: Programacao funcional
+Sala 2 15/15: Sistemas computacionais
+Sala 1 20/20: Sistemas computacionais
+--- dia 8---
+Sala 4 5/20: Sistemas computacionais
+Sala 3 30/30: Compiladores
+Sala 2 15/15: Compiladores
+Sala 1 5/20: Compiladores
+--- dia 9---
+Sala 4 20/20: Engenharia de software
+Sala 3 20/30: Engenharia de software
+Sala 2 15/15: Métodos estatísticos
+Sala 1 20/20: Métodos estatísticos
+--- dia 10---
+Sala 4 10/20: Métodos estatísticos
+Sala 3 30/30: Programacao orientada a objetos
+Sala 2 10/15: Programacao orientada a objetos
+Sala 1 20/20: Sistemas operativos
+--- dia 11---
+Sala 4 20/20: Sistemas operativos
+Sala 3 30/30: Algoritmia e estruturas de dados
+Sala 2 10/15: Algoritmia e estruturas de dados
+Sala 1 20/20: Bases de dados
+--- dia 12---
+Sala 4 20/20: Bases de dados
+Sala 3 30/30: Comunicacao de dados
+Sala 2 10/15: Comunicacao de dados
+Sala 1 20/20: Laboratorio de planeamento e desenvolvimento de software
+--- dia 13---
+Sala 4 20/20: Laboratorio de planeamento e desenvolvimento de software
+Sala 3 30/30: Metodos computacionais em engenharia
+Sala 2 10/15: Metodos computacionais em engenharia
+Sala 1 20/20: Programacao multiplataforma
+--- dia 14---
+Sala 4 20/20: Programacao multiplataforma
+Sala 3 20/30: Engenharia web
+Sala 2 15/15: Gestao de projetos em engenharia
+Sala 1 5/20: Gestao de projetos em engenharia
+--- dia 15---
+Sala 4 20/20: Inteligencia artificial
+Sala 3 20/30: Laboratorio de aplicacoes web e bases de dados
+Sala 2 15/15: Redes de computadores
+Sala 1 5/20: Redes de computadores
+--- dia 16---
+Sala 4 20/20: Sistemas de informacao
+Sala 3 20/30: Introducao a ciencia dos dados
+Sala 2 15/15: Computacao grafica
+Sala 1 5/20: Computacao grafica
+--- dia 17---
+Sala 4 20/20: Interacao pessoa computador
+Sala 3 20/30: Laboratorio de projeto em engenharia informatica
+Sala 2 15/15: Sistemas distribuidos
+Sala 1 5/20: Sistemas distribuidos

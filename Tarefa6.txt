@@ -1,99 +1,96 @@
 --- dia 1---
-Sala 4 10/10: Algebra linear
-Sala 3 20/20: Algebra linear
-Sala 2 10/20: Algebra linear
+Sala 5 5/5: Algebra linear
+Sala 4 20/20: Algebra linear
+Sala 3 15/30: Algebra linear
+Sala 2 15/15: Analise matematica I
 Sala 1 20/20: Analise matematica I
 --- dia 2---
-Sala 4 10/10: Analise matematica I
-Sala 3 20/20: Analise matematica I
-Sala 2 8/20: Analise matematica I
-Sala 1 20/20: Laboratorio de informatica e computadores
---- dia 3---
-Sala 4 10/10: Laboratorio de informatica e computadores
-Sala 3 10/20: Laboratorio de informatica e computadores
-Sala 2 20/20: Topicos de matematica discreta
+Sala 5 5/5: Analise matematica I
+Sala 4 18/20: Analise matematica I
+Sala 3 30/30: Laboratorio de informatica e computadores
+Sala 2 10/15: Laboratorio de informatica e computadores
 Sala 1 20/20: Topicos de matematica discreta
---- dia 4---
-Sala 4 10/10: Programacao procedimental
-Sala 3 20/20: Programacao procedimental
-Sala 2 10/20: Programacao procedimental
+--- dia 3---
+Sala 5 5/5: Topicos de matematica discreta
+Sala 4 15/20: Topicos de matematica discreta
+Sala 3 30/30: Programacao procedimental
+Sala 2 10/15: Programacao procedimental
 Sala 1 20/20: Seminario de informatica
+--- dia 4---
+Sala 5 5/5: Seminario de informatica
+Sala 4 15/20: Seminario de informatica
+Sala 3 30/30: Analise matematica II
+Sala 2 10/15: Analise matematica II
+Sala 1 20/20: Elementos de fisica geral
 --- dia 5---
-Sala 4 10/10: Seminario de informatica
-Sala 3 10/20: Seminario de informatica
-Sala 2 20/20: Analise matematica II
-Sala 1 20/20: Analise matematica II
---- dia 6---
-Sala 4 10/10: Elementos de fisica geral
-Sala 3 20/20: Elementos de fisica geral
-Sala 2 10/20: Elementos de fisica geral
-Sala 1 20/20: Engenharia nas organizacoes
---- dia 7---
-Sala 4 10/10: Engenharia nas organizacoes
-Sala 3 10/20: Engenharia nas organizacoes
-Sala 2 20/20: Laboratorio de programacao
+Sala 5 5/5: Elementos de fisica geral
+Sala 4 15/20: Elementos de fisica geral
+Sala 3 30/30: Engenharia nas organizacoes
+Sala 2 10/15: Engenharia nas organizacoes
 Sala 1 20/20: Laboratorio de programacao
---- dia 8---
-Sala 4 10/10: Programacao funcional
-Sala 3 20/20: Programacao funcional
-Sala 2 20/20: Programacao funcional
-Sala 1 10/20: Programacao funcional
---- dia 9---
-Sala 4 10/10: Sistemas computacionais
-Sala 3 20/20: Sistemas computacionais
-Sala 2 10/20: Sistemas computacionais
+--- dia 6---
+Sala 5 5/5: Laboratorio de programacao
+Sala 4 15/20: Laboratorio de programacao
+Sala 3 30/30: Programacao funcional
+Sala 2 15/15: Programacao funcional
+Sala 1 15/20: Programacao funcional
+--- dia 7---
+Sala 5 5/5: Sistemas computacionais
+Sala 4 20/20: Sistemas computacionais
+Sala 3 15/30: Sistemas computacionais
+Sala 2 15/15: Compiladores
 Sala 1 20/20: Compiladores
---- dia 10---
-Sala 4 10/10: Compiladores
-Sala 3 20/20: Compiladores
-Sala 2 20/20: Engenharia de software
-Sala 1 20/20: Engenharia de software
---- dia 11---
-Sala 4 10/10: Métodos estatísticos
-Sala 3 20/20: Métodos estatísticos
-Sala 2 15/20: Métodos estatísticos
-Sala 1 20/20: Programacao orientada a objetos
---- dia 12---
-Sala 4 10/10: Programacao orientada a objetos
-Sala 3 10/20: Programacao orientada a objetos
-Sala 2 20/20: Sistemas operativos
+--- dia 8---
+Sala 5 5/5: Compiladores
+Sala 4 10/20: Compiladores
+Sala 3 30/30: Engenharia de software
+Sala 2 10/15: Engenharia de software
+Sala 1 20/20: Métodos estatísticos
+--- dia 9---
+Sala 5 5/5: Métodos estatísticos
+Sala 4 20/20: Métodos estatísticos
+Sala 3 30/30: Programacao orientada a objetos
+Sala 2 10/15: Programacao orientada a objetos
 Sala 1 20/20: Sistemas operativos
---- dia 13---
-Sala 4 10/10: Algoritmia e estruturas de dados
-Sala 3 20/20: Algoritmia e estruturas de dados
-Sala 2 10/20: Algoritmia e estruturas de dados
+--- dia 10---
+Sala 5 5/5: Sistemas operativos
+Sala 4 15/20: Sistemas operativos
+Sala 3 30/30: Algoritmia e estruturas de dados
+Sala 2 10/15: Algoritmia e estruturas de dados
 Sala 1 20/20: Bases de dados
---- dia 14---
-Sala 4 10/10: Bases de dados
-Sala 3 10/20: Bases de dados
-Sala 2 20/20: Comunicacao de dados
-Sala 1 20/20: Comunicacao de dados
---- dia 15---
-Sala 4 10/10: Laboratorio de planeamento e desenvolvimento de software
-Sala 3 20/20: Laboratorio de planeamento e desenvolvimento de software
-Sala 2 10/20: Laboratorio de planeamento e desenvolvimento de software
-Sala 1 20/20: Metodos computacionais em engenharia
---- dia 16---
-Sala 4 10/10: Metodos computacionais em engenharia
-Sala 3 10/20: Metodos computacionais em engenharia
-Sala 2 20/20: Programacao multiplataforma
+--- dia 11---
+Sala 5 5/5: Bases de dados
+Sala 4 15/20: Bases de dados
+Sala 3 30/30: Comunicacao de dados
+Sala 2 10/15: Comunicacao de dados
+Sala 1 20/20: Laboratorio de planeamento e desenvolvimento de software
+--- dia 12---
+Sala 5 5/5: Laboratorio de planeamento e desenvolvimento de software
+Sala 4 15/20: Laboratorio de planeamento e desenvolvimento de software
+Sala 3 30/30: Metodos computacionais em engenharia
+Sala 2 10/15: Metodos computacionais em engenharia
 Sala 1 20/20: Programacao multiplataforma
---- dia 17---
-Sala 4 10/10: Engenharia web
-Sala 3 10/20: Engenharia web
-Sala 2 20/20: Gestao de projetos em engenharia
-Sala 1 20/20: Inteligencia artificial
---- dia 18---
-Sala 4 10/10: Laboratorio de aplicacoes web e bases de dados
-Sala 3 10/20: Laboratorio de aplicacoes web e bases de dados
-Sala 2 20/20: Redes de computadores
-Sala 1 20/20: Sistemas de informacao
---- dia 19---
-Sala 4 10/10: Introducao a ciencia dos dados
-Sala 3 10/20: Introducao a ciencia dos dados
-Sala 2 20/20: Computacao grafica
-Sala 1 20/20: Interacao pessoa computador
---- dia 20---
-Sala 4 10/10: Laboratorio de projeto em engenharia informatica
-Sala 3 10/20: Laboratorio de projeto em engenharia informatica
-Sala 2 20/20: Sistemas distribuidos
+--- dia 13---
+Sala 5 5/5: Programacao multiplataforma
+Sala 4 15/20: Programacao multiplataforma
+Sala 3 20/30: Engenharia web
+Sala 2 15/15: Gestao de projetos em engenharia
+Sala 1 5/20: Gestao de projetos em engenharia
+--- dia 14---
+Sala 5 5/5: Inteligencia artificial
+Sala 4 15/20: Inteligencia artificial
+Sala 3 20/30: Laboratorio de aplicacoes web e bases de dados
+Sala 2 15/15: Redes de computadores
+Sala 1 5/20: Redes de computadores
+--- dia 15---
+Sala 5 5/5: Sistemas de informacao
+Sala 4 15/20: Sistemas de informacao
+Sala 3 20/30: Introducao a ciencia dos dados
+Sala 2 15/15: Computacao grafica
+Sala 1 5/20: Computacao grafica
+--- dia 16---
+Sala 5 5/5: Interacao pessoa computador
+Sala 4 15/20: Interacao pessoa computador
+Sala 3 20/30: Laboratorio de projeto em engenharia informatica
+Sala 2 15/15: Sistemas distribuidos
+Sala 1 5/20: Sistemas distribuidos

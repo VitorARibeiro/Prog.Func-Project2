@@ -1,7 +1,7 @@
 import System.IO
 import Data.List (delete)
 import Data.List (nub)
-import GHC.Base (VecElem(Int16ElemRep))
+
 
 
 
@@ -65,9 +65,16 @@ tarefa2 = do
     --convercao-- para int
     let n_dias = read dias :: Int
     let n_salas = read salas :: Int
-    if n_disciplinas > n_dias * n_salas  -- se numero de disciplinas maior que dias livres * salas impossivel
-        then putStrLn "Dias insuficientes para acomodar todos os exames"
-        else escalonamento2 maiorAnoInt 1 n_salas (lines conteudoDisciplina)
+
+    escalonamento2 maiorAnoInt 1 n_dias n_salas (lines conteudoDisciplina)
+
+    suporte2 <- readFile' "Suporte2.txt"
+
+    if null (lines suporte2)
+        then return()
+        else do 
+            putStrLn "Tempo insuficiente para acomodar todos os exames"
+            return()
 
 
 -- tarefa 3
@@ -206,23 +213,76 @@ maiorAno (x:xs) = do
             maiorAno xs
         else maiorAno xs
             
-escalonamento2 :: Int -> Int -> Int -> [String] -> IO() 
-escalonamento2 anoMax dias salas [] = return()
-escalonamento2 anoMax dias salas (x:xs) = do
-    ficheiro <- openFile "Tarefa2.txt" AppendMode
-    hPutStrLn ficheiro ("--- dia "++ show dias ++ "---")
-    hClose ficheiro
+escalonamento2 :: Int -> Int -> Int -> Int -> [String] -> IO() 
+escalonamento2 anoMax dias diasMax salas [] = return()
+escalonamento2 anoMax dias diasMax salas (x:xs) = do
 
-    ficheiro <- openFile "Suporte3.txt" WriteMode
-    hClose ficheiro --limpar ficheiro3
+    if dias > diasMax
+        then return()
+        else do 
 
-    --funcao que seleciona disciplinas para ficheiro3 e apaga o ficheiro 2
-  
+            ficheiro <- openFile "Tarefa2.txt" AppendMode
+            hPutStrLn ficheiro ("--- dia "++ show dias ++ "---")
+            hClose ficheiro
 
-    suporte3 <- readFile' "Suporte3.txt"
-    printSalas2 salas (lines suporte3)--print nos ficheiros do 3
+            ficheiro <- openFile "Suporte3.txt" WriteMode
+            hClose ficheiro --limpar ficheiro3
+
+            --funcao que seleciona disciplinas para ficheiro3 e apaga o ficheiro 2
+
+
+            repeater2 anoMax salas
+            --ficheiro3 a zero
+            
+        
+
+            suporte3 <- readFile' "Suporte3.txt"
+            printSalas2 salas (lines suporte3)--print nos ficheiros do 3
+
+            suporte2 <- readFile' "Suporte2.txt"
+            if null (lines suporte2)
+                then return()
+                else do
+                    ficheiro <- openFile "Suporte.txt" WriteMode
+                    hPutStrLn ficheiro "0"
+                    hClose ficheiro
+                    maiorAno (lines suporte2)
+                    let suporte = readFile' "Suporte.txt"
+                    maiorAnoString <- suporte
+                    let maiorAnoInt = read maiorAnoString :: Int -- maior ano no ficheiro
+                    escalonamento2 maiorAnoInt (dias+1) diasMax salas (lines suporte2)
+
+finder :: Int -> [String] -> IO()
+finder _ [] = return()
+finder ano (x:xs) = do --ano a encontrar, ficheiro2
+    let anoLinhaString = head(tail(words x))
+    let anoLinhaInt = read anoLinhaString :: Int
+
+    if ano == anoLinhaInt
+        then do
+            ficheiro <- openFile "Suporte3.txt" AppendMode
+            hPutStrLn ficheiro x
+            hClose ficheiro --limpar ficheiro3
+            copyFile xs
+            return()
+        else do
+            ficheiro <- openFile "Suporte2.txt" AppendMode
+            hPutStrLn ficheiro x
+            hClose ficheiro 
+            finder ano xs
+
+ 
+repeater2 :: Int -> Int -> IO()
+repeater2 0 _ = return()
+repeater2 _ 0 = return()
+repeater2 anoMax salas = do --ano maximo a procurar e numero de salas a preencher
     suporte2 <- readFile' "Suporte2.txt"
-    escalonamento2 anoMax (dias+1) salas (lines suporte2)
+
+    ficheiro <- openFile "Suporte2.txt" WriteMode
+    hClose ficheiro --limpar ficheiro2
+
+    finder anoMax (lines suporte2)
+    repeater2 (anoMax-1)(salas-1)
 
 
 printSalas2 :: Int -> [String] -> IO()

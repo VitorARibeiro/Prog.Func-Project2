@@ -1,4 +1,0 @@
-23 2 Programacao multiplataforma
-32 3 Interacao pessoa computador
-33 3 Laboratorio de projeto em engenharia informatica
-34 3 Sistemas distribuidos

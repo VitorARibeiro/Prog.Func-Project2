@@ -1,42 +1,82 @@
 --- dia 1---
-Sala 10: Algebra linear
-Sala 9: Analise matematica I
-Sala 8: Laboratorio de informatica e computadores
-Sala 7: Topicos de matematica discreta
-Sala 6: Programacao procedimental
+Sala 5: Algebra linear
+Sala 4: Analise matematica I
+Sala 3: Laboratorio de informatica e computadores
+Sala 2: Topicos de matematica discreta
+Sala 1: Programacao procedimental
+--- dia 2---
 Sala 5: Seminario de informatica
 Sala 4: Analise matematica II
 Sala 3: Elementos de fisica geral
 Sala 2: Engenharia nas organizacoes
 Sala 1: Laboratorio de programacao
-Numero de imcompatibilidades: 200
---- dia 2---
-Sala 10: Programacao funcional
-Sala 9: Sistemas computacionais
-Sala 8: Compiladores
-Sala 7: Engenharia de software
-Sala 6: Métodos estatísticos
+--- dia 3---
+Sala 5: Programacao funcional
+Sala 4: Sistemas computacionais
+Sala 3: Compiladores
+Sala 2: Engenharia de software
+Sala 1: Métodos estatísticos
+--- dia 4---
 Sala 5: Programacao orientada a objetos
 Sala 4: Sistemas operativos
 Sala 3: Algoritmia e estruturas de dados
 Sala 2: Bases de dados
 Sala 1: Comunicacao de dados
-Numero de imcompatibilidades: 200
---- dia 3---
-Sala 10: Laboratorio de planeamento e desenvolvimento de software
-Sala 9: Metodos computacionais em engenharia
-Sala 8: Programacao multiplataforma
-Sala 7: Engenharia web
-Sala 6: Gestao de projetos em engenharia
+--- dia 5---
+Sala 5: Laboratorio de planeamento e desenvolvimento de software
+Sala 4: Metodos computacionais em engenharia
+Sala 3: Programacao multiplataforma
+Sala 2: Engenharia web
+Sala 1: Gestao de projetos em engenharia
+--- dia 6---
 Sala 5: Inteligencia artificial
 Sala 4: Laboratorio de aplicacoes web e bases de dados
 Sala 3: Redes de computadores
 Sala 2: Sistemas de informacao
 Sala 1: Introducao a ciencia dos dados
-Numero de imcompatibilidades: 100
+--- dia 7---
+Sala 5: Computacao grafica
+Sala 4: Interacao pessoa computador
+Sala 3: Laboratorio de projeto em engenharia informatica
+Sala 2: Sistemas distribuidos
+--- dia 1---
+Sala 5: Algebra linear
+Sala 4: Analise matematica I
+Sala 3: Laboratorio de informatica e computadores
+Sala 2: Topicos de matematica discreta
+Sala 1: Programacao procedimental
+--- dia 2---
+Sala 5: Seminario de informatica
+Sala 4: Analise matematica II
+Sala 3: Elementos de fisica geral
+Sala 2: Engenharia nas organizacoes
+Sala 1: Laboratorio de programacao
+--- dia 3---
+Sala 5: Programacao funcional
+Sala 4: Sistemas computacionais
+Sala 3: Compiladores
+Sala 2: Engenharia de software
+Sala 1: Métodos estatísticos
 --- dia 4---
-Sala 10: Computacao grafica
-Sala 9: Interacao pessoa computador
-Sala 8: Laboratorio de projeto em engenharia informatica
-Sala 7: Sistemas distribuidos
-Numero de imcompatibilidades: 40
+Sala 5: Programacao orientada a objetos
+Sala 4: Sistemas operativos
+Sala 3: Algoritmia e estruturas de dados
+Sala 2: Bases de dados
+Sala 1: Comunicacao de dados
+--- dia 5---
+Sala 5: Laboratorio de planeamento e desenvolvimento de software
+Sala 4: Metodos computacionais em engenharia
+Sala 3: Programacao multiplataforma
+Sala 2: Engenharia web
+Sala 1: Gestao de projetos em engenharia
+--- dia 6---
+Sala 5: Inteligencia artificial
+Sala 4: Laboratorio de aplicacoes web e bases de dados
+Sala 3: Redes de computadores
+Sala 2: Sistemas de informacao
+Sala 1: Introducao a ciencia dos dados
+--- dia 7---
+Sala 5: Computacao grafica
+Sala 4: Interacao pessoa computador
+Sala 3: Laboratorio de projeto em engenharia informatica
+Sala 2: Sistemas distribuidos

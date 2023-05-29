@@ -1,6 +1,7 @@
 import System.IO
 import Data.List (delete)
 import Data.List (nub)
+import GHC.Base (VecElem(Int16ElemRep))
 
 
 
@@ -25,6 +26,49 @@ tarefa1 = do
     if n_disciplinas > n_dias * n_salas  -- se numero de disciplinas maior que dias livres * salas impossivel
         then putStrLn "Dias insuficientes para acomodar todos os exames"
         else escalonamento 1 n_salas (lines conteudoDisciplina)
+
+--tarefa2
+tarefa2 :: IO()
+tarefa2 = do 
+    conteudoDisciplina <- readFile "ucs.txt"
+
+    ficheiro <- openFile "Tarefa2.txt" WriteMode
+    hClose ficheiro
+    --fazer uma copia de ucs para ficheiro 2 
+    ficheiro <- openFile "Suporte2.txt" WriteMode
+    hClose ficheiro
+
+    ficheiro <- openFile "Suporte3.txt" WriteMode
+    hClose ficheiro
+
+    ficheiro <- openFile "Suporte.txt" WriteMode
+    hPutStrLn ficheiro "0"
+    hClose ficheiro
+    --descobrir qual o ano mais alto escrever no ficheiro 1
+
+    copyFile (lines conteudoDisciplina)
+
+    suporte2 <- readFile' "Suporte2.txt"
+    maiorAno (lines suporte2)
+    let suporte = readFile' "Suporte.txt"
+    maiorAnoString <- suporte
+    let maiorAnoInt = read maiorAnoString :: Int -- maior ano no ficheiro
+    
+
+    --Pedir input
+    putStrLn "indique numero de dias em que o exame pode ocorrer"
+    dias <- getLine
+    putStrLn "indique o numero de salas disponiveis por dia"
+    salas <- getLine
+    --linhas no ficheiro-
+    let n_disciplinas = length (lines conteudoDisciplina) -- numero de disciplinas é o numero de linhas no ficheiro
+    --convercao-- para int
+    let n_dias = read dias :: Int
+    let n_salas = read salas :: Int
+    if n_disciplinas > n_dias * n_salas  -- se numero de disciplinas maior que dias livres * salas impossivel
+        then putStrLn "Dias insuficientes para acomodar todos os exames"
+        else escalonamento2 maiorAnoInt 1 n_salas (lines conteudoDisciplina)
+
 
 -- tarefa 3
 tarefa3 :: IO()
@@ -78,8 +122,6 @@ tarefa5 = do
     ficheiro <- openFile "Suporte3.txt" WriteMode
     hClose ficheiro
 
-    ficheiro <- openFile "Suporte4.txt" WriteMode
-    hClose ficheiro
 
     copyFile(lines conteudoDisciplina) --fazer uma copia para ficheiro suporte 2
     --Pedir input
@@ -143,6 +185,55 @@ tarefa6 = do
             if suporte2 /= []
                 then putStrLn ("Insuficiente para acomodar todos os exames")
                 else return()
+--funcoes tarefa 2 
+maiorAno :: [String] -> IO()
+maiorAno [] = return()
+maiorAno (x:xs) = do 
+
+    let suporte = readFile' "Suporte.txt"
+    
+    suporteString <-  suporte
+    let suporteInt = read suporteString :: Int
+
+    let numero = head(tail(words x))
+    let numeroInt = read numero :: Int
+
+    if numeroInt > suporteInt
+        then do 
+            ficheiro <- openFile "Suporte.txt" WriteMode
+            hPrint ficheiro numeroInt
+            hClose ficheiro
+            maiorAno xs
+        else maiorAno xs
+            
+escalonamento2 :: Int -> Int -> Int -> [String] -> IO() 
+escalonamento2 anoMax dias salas [] = return()
+escalonamento2 anoMax dias salas (x:xs) = do
+    ficheiro <- openFile "Tarefa2.txt" AppendMode
+    hPutStrLn ficheiro ("--- dia "++ show dias ++ "---")
+    hClose ficheiro
+
+    ficheiro <- openFile "Suporte3.txt" WriteMode
+    hClose ficheiro --limpar ficheiro3
+
+    --funcao que seleciona disciplinas para ficheiro3 e apaga o ficheiro 2
+  
+
+    suporte3 <- readFile' "Suporte3.txt"
+    printSalas2 salas (lines suporte3)--print nos ficheiros do 3
+    suporte2 <- readFile' "Suporte2.txt"
+    escalonamento2 anoMax (dias+1) salas (lines suporte2)
+
+
+printSalas2 :: Int -> [String] -> IO()
+printSalas2 salas [] = return()
+printSalas2 0 (x:xs) = return()
+printSalas2 salas (x:xs) = do
+    ficheiro <- openFile "Tarefa2.txt" AppendMode
+    hPutStrLn ficheiro ("Sala "++ show salas ++ ": "++ unwords (tail (tail(words x))))
+    hClose ficheiro
+    printSalas2 (salas-1) xs
+
 --funcoes tarefa 5
 copyFile :: [String] -> IO()
 copyFile [] = return()
@@ -173,7 +264,7 @@ escalonamento5 disciplina inscricao alunos dias salas  = do
 
     ficheiro <- openFile "Suporte.txt" WriteMode
     hClose ficheiro
-    
+
     printSalas5 disciplina inscricao alunos salas (lines suporte3) --print selecao do suporte 3
 
     ficheiroSuporte <- readFile "Suporte.txt"
@@ -192,7 +283,6 @@ escalonamento5 disciplina inscricao alunos dias salas  = do
         else escalonamento5 disciplina inscricao alunos (dias+1) salas
 
      
-
 condTester :: Int -> Int-> [String] -> IO() 
 condTester salas _ [] = return()
 condTester 0 _ (x:xs) = return()-- tem de remover os valores utilizados do suporte2 e escolher os melhores para o suporte3  

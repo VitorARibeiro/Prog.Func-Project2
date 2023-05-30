@@ -1,57 +1,46 @@
 --- dia 1---
-Sala 2: Engenharia web
-Sala 1: Compiladores
+Sala 5: Engenharia web
+Sala 4: Compiladores
+Sala 3: Algebra linear
 --- dia 2---
-Sala 2: Gestao de projetos em engenharia
-Sala 1: Engenharia de software
+Sala 5: Gestao de projetos em engenharia
+Sala 4: Engenharia de software
+Sala 3: Analise matematica I
 --- dia 3---
-Sala 2: Inteligencia artificial
-Sala 1: Métodos estatísticos
+Sala 5: Inteligencia artificial
+Sala 4: Métodos estatísticos
+Sala 3: Laboratorio de informatica e computadores
 --- dia 4---
-Sala 2: Laboratorio de aplicacoes web e bases de dados
-Sala 1: Programacao orientada a objetos
+Sala 5: Laboratorio de aplicacoes web e bases de dados
+Sala 4: Programacao orientada a objetos
+Sala 3: Topicos de matematica discreta
 --- dia 5---
-Sala 2: Redes de computadores
-Sala 1: Sistemas operativos
+Sala 5: Redes de computadores
+Sala 4: Sistemas operativos
+Sala 3: Programacao procedimental
 --- dia 6---
-Sala 2: Sistemas de informacao
-Sala 1: Algoritmia e estruturas de dados
+Sala 5: Sistemas de informacao
+Sala 4: Algoritmia e estruturas de dados
+Sala 3: Seminario de informatica
 --- dia 7---
-Sala 2: Introducao a ciencia dos dados
-Sala 1: Bases de dados
+Sala 5: Introducao a ciencia dos dados
+Sala 4: Bases de dados
+Sala 3: Analise matematica II
 --- dia 8---
-Sala 2: Computacao grafica
-Sala 1: Comunicacao de dados
+Sala 5: Computacao grafica
+Sala 4: Comunicacao de dados
+Sala 3: Elementos de fisica geral
 --- dia 9---
-Sala 2: Interacao pessoa computador
-Sala 1: Laboratorio de planeamento e desenvolvimento de software
+Sala 5: Interacao pessoa computador
+Sala 4: Laboratorio de planeamento e desenvolvimento de software
+Sala 3: Engenharia nas organizacoes
 --- dia 10---
-Sala 2: Laboratorio de projeto em engenharia informatica
-Sala 1: Metodos computacionais em engenharia
+Sala 5: Laboratorio de projeto em engenharia informatica
+Sala 4: Metodos computacionais em engenharia
+Sala 3: Laboratorio de programacao
 --- dia 11---
-Sala 2: Sistemas distribuidos
-Sala 1: Programacao multiplataforma
+Sala 5: Sistemas distribuidos
+Sala 4: Programacao multiplataforma
+Sala 3: Programacao funcional
 --- dia 12---
-Sala 2: Algebra linear
---- dia 13---
-Sala 2: Analise matematica I
---- dia 14---
-Sala 2: Laboratorio de informatica e computadores
---- dia 15---
-Sala 2: Topicos de matematica discreta
---- dia 16---
-Sala 2: Programacao procedimental
---- dia 17---
-Sala 2: Seminario de informatica
---- dia 18---
-Sala 2: Analise matematica II
---- dia 19---
-Sala 2: Elementos de fisica geral
---- dia 20---
-Sala 2: Engenharia nas organizacoes
---- dia 21---
-Sala 2: Laboratorio de programacao
---- dia 22---
-Sala 2: Programacao funcional
---- dia 23---
-Sala 2: Sistemas computacionais
+Sala 5: Sistemas computacionais
